@@ -9,7 +9,8 @@ Console.WriteLine(userInput);
 userInput = "ABC";
 Console.WriteLine(userInput);
 
-int number = 2;
-number = 7;
+int number;
+number = 8;
+Console.WriteLine(number);
 
 Console.ReadKey();
