@@ -1,15 +1,13 @@
-﻿int a = 10;
-int b = 5;
-++a;
---b;
-Console.WriteLine(a);
-Console.WriteLine(b);
+﻿Console.WriteLine("Hello");
+Console.WriteLine("What do you want to do?");
+Console.WriteLine("[S]ee all TODOs");
+Console.WriteLine("[A]dd a TODO");
+Console.WriteLine("[R]emove a TODO");
+Console.WriteLine("[E]xit");
 
-Console.WriteLine("Addition: " + (a + b));
-Console.WriteLine("Substraction: " + (a - b));
-Console.WriteLine("Multiplication: " + a * b);
-Console.WriteLine("Division: " + a / b);
-Console.WriteLine("Jonh" + " " + "Smith");
+string UserChoice = Console.ReadLine();
+Console.WriteLine("User input: " + UserChoice);
+UserChoice = "ABC";
 
 
 Console.ReadKey();
