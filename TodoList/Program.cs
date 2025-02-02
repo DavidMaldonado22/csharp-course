@@ -9,5 +9,6 @@ string UserChoice = Console.ReadLine();
 Console.WriteLine("User input: " + UserChoice);
 UserChoice = "ABC";
 
+var result = "abc" + "def" + "ghi";
 
-Console.ReadKey();
+Console.ReadKey(); 
