@@ -7,9 +7,18 @@ Console.WriteLine("[E]xit");
 
 var userChoice = Console.ReadLine();
 
-var number = 10;
-var isLargerThan4AndSmallerThan9 = number > 4 && number < 9;
-var isEqualTo2OrLargerThan6OrSmallerThan200 = number == 2 || number > 6 || number < 200;
-var isEqualTo123OrEvenAndSmallerThan20 = number == 123 || (number % 2 == 0 && number < 20);
+if(userChoice.Length <= 3)
+{
+    Console.WriteLine("Short answer");
+}
+else if(userChoice.Length < 10)
+{
+    Console.WriteLine("Medium answer");
+}
+else
+{
+    Console.WriteLine("Long answer");
+}
+
 
 Console.ReadKey(); 
