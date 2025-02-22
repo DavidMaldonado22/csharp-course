@@ -5,20 +5,11 @@ Console.WriteLine("[A]dd a TODO");
 Console.WriteLine("[R]emove a TODO");
 Console.WriteLine("[E]xit");
 
-string UserChoice = Console.ReadLine();
-
-bool isUserInputAbc = UserChoice == "ABC";
-bool isUserInputNotAbc = UserChoice != "ABC";
-bool isUserInputNotAbc2 = !(UserChoice == "ABC");
+var userChoice = Console.ReadLine();
 
 var number = 10;
-
-var isLargerThan5 = number > 5;
-var isSmallerThan10 = number < 10;
-var isLargerOrEqualTo10 = number >= 10;
-var isSmallerOrEqualTo6 = number <= 6;
-
-var is10Modulo3EqualTo1 = 10 % 3 == 1;
-var isEven = 10 % 2 == 0;
+var isLargerThan4AndSmallerThan9 = number > 4 && number < 9;
+var isEqualTo2OrLargerThan6OrSmallerThan200 = number == 2 || number > 6 || number < 200;
+var isEqualTo123OrEvenAndSmallerThan20 = number == 123 || (number % 2 == 0 && number < 20);
 
 Console.ReadKey(); 
