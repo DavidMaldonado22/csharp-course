@@ -9,28 +9,26 @@ Console.WriteLine("[E]xit");
 
 var userChoice = Console.ReadLine();
 
-if (userChoice.Length == 0)
+if(userChoice == "S")
 {
-    Console.WriteLine("Empty choice!");
-    int number = 5;
-    Console.WriteLine(number);
-    var word = "ABC";
-    var number2 = 10;
-    if(word.Length > 0)
-    {
-        var number2 = 10;
-        Console.WriteLine(number);
-        Console.WriteLine(userChoice);
-    }
-    Console.WriteLine(number2);
+    PrintSelectionOption("See all TODOs");
 }
-else
+else if(userChoice == "A")
 {
-    int number = 5;
-    Console.WriteLine("Non-empty choice: " + userChoice);
-    Console.WriteLine(number);
+    PrintSelectionOption("Add a TODO");
 }
-Console.WriteLine("Your choice is: " + userChoice);
-Console.WriteLine(number);
+else if (userChoice == "R")
+{
+    PrintSelectionOption("Remove a TODO");
+}
+else if (userChoice == "E")
+{
+    PrintSelectionOption("Exit");
+}
 
-Console.ReadKey(); 
+void PrintSelectionOption(string selectedOption)
+{
+    Console.WriteLine("Selected option: " + selectedOption);
+}
+
+Console.ReadKey();
