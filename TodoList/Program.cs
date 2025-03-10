@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello");
 Console.WriteLine("What do you want to do?");
@@ -8,27 +9,43 @@ Console.WriteLine("[R]emove a TODO");
 Console.WriteLine("[E]xit");
 
 var userChoice = Console.ReadLine();
+bool isLong = IsLong(userChoice);
 
-if(userChoice == "S")
+bool IsLong(string input)
 {
-    PrintSelectionOption("See all TODOs");
-}
-else if(userChoice == "A")
-{
-    PrintSelectionOption("Add a TODO");
-}
-else if (userChoice == "R")
-{
-    PrintSelectionOption("Remove a TODO");
-}
-else if (userChoice == "E")
-{
-    PrintSelectionOption("Exit");
+   return input.Length > 0;
 }
 
-void PrintSelectionOption(string selectedOption)
+var result = Add(10, 5);
+
+Console.WriteLine("10 + 5 = " + result);
+
+//if(userChoice == "S")
+//{
+//    PrintSelectionOption("See all TODOs");
+//}
+//else if(userChoice == "A")
+//{
+//    PrintSelectionOption("Add a TODO");
+//}
+//else if (userChoice == "R")
+//{
+//    PrintSelectionOption("Remove a TODO");
+//}
+//else if (userChoice == "E")
+//{
+//    PrintSelectionOption("Exit");
+//}
+
+//void PrintSelectionOption(string selectedOption)
+//{
+//    Console.WriteLine("Selected option: " + selectedOption);
+//}
+
+int Add(int a, int b)
 {
-    Console.WriteLine("Selected option: " + selectedOption);
+   return a + b;
 }
+
 
 Console.ReadKey();
