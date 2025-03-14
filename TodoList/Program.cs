@@ -9,7 +9,11 @@ Console.WriteLine("[R]emove a TODO");
 Console.WriteLine("[E]xit");
 
 var userChoice = Console.ReadLine();
-bool isLong = IsLong(userChoice);
+
+var word = "abc";
+word = 10;
+
+bool isLong = IsLong(word);
 
 bool IsLong(string input)
 {
