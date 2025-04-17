@@ -1,60 +1,40 @@
 ﻿using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-Console.WriteLine("Provide a number.");
-string userInput = Console.ReadLine();
-int number = int.Parse(userInput);
-Console.WriteLine(number);
+//int userNumber;
 
-//Console.WriteLine("Hello");
-//Console.WriteLine("What do you want to do?");
-//Console.WriteLine("[S]ee all TODOs");
-//Console.WriteLine("[A]dd a TODO");
-//Console.WriteLine("[R]emove a TODO");
-//Console.WriteLine("[E]xit");
+//do
+//{
+//    Console.WriteLine("Enter a number larger than 10:");
+//    var userInput =  Console.ReadLine();
 
-var userChoice = Console.ReadLine();
+//    if(userInput == "stop")
+//    {
+//        break;
+//    }
+//    bool isParseableToInt = userInput.All(char.IsDigit);
+//    if(!isParseableToInt)
+//    {
+//        userNumber = 0;
+//        continue;
+//    }
 
-var word = "abc";
-word = "abc";
+//    userNumber = int.Parse(userInput);
+//} while (userNumber <= 5);
 
-bool isLong = IsLong(word);
 
-bool IsLong(string input)
+for(int i = 0; i < 4; ++i)
 {
-   return input.Length > 0;
-}
+    for(int j = 0; j < 3; ++j)
+    {
 
-var result = Add(10, 5);
-
-Console.WriteLine("10 + 5 = " + result);
-
-//if(userChoice == "S")
-//{
-//    PrintSelectionOption("See all TODOs");
-//}
-//else if(userChoice == "A")
-//{
-//    PrintSelectionOption("Add a TODO");
-//}
-//else if (userChoice == "R")
-//{
-//    PrintSelectionOption("Remove a TODO");
-//}
-//else if (userChoice == "E")
-//{
-//    PrintSelectionOption("Exit");
-//}
-
-//void PrintSelectionOption(string selectedOption)
-//{
-//    Console.WriteLine("Selected option: " + selectedOption);
-//}
-
-int Add(int a, int b)
-{
-   return a + b;
+        for(int k = 0; k < 5; ++k)
+        {
+            Console.WriteLine($"is is {i}, j is {j}, k is {k}");
+        }
+    }
 }
 
 
+Console.WriteLine("The loop is finished");
 Console.ReadKey();
