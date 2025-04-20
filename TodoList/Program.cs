@@ -1,47 +1,12 @@
 ﻿using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-//int userNumber;
+List<string> words = new List<string>();
 
-//do
-//{
-//    Console.WriteLine("Enter a number larger than 10:");
-//    var userInput =  Console.ReadLine();
+Console.WriteLine("Count of elements is " + words.Count);
 
-//    if(userInput == "stop")
-//    {
-//        break;
-//    }
-//    bool isParseableToInt = userInput.All(char.IsDigit);
-//    if(!isParseableToInt)
-//    {
-//        userNumber = 0;
-//        continue;
-//    }
+words.Add("hello");
 
-//    userNumber = int.Parse(userInput);
-//} while (userNumber <= 5);
+Console.WriteLine("Count of elements is " + words.Count);
 
-
-
-for (int i = 0; i < 4; ++i)
-{
-    var data = GetFromDataBase(i);
-    for (int j = 0; j < 3; ++j)
-    {
-
-        for(int k = 0; k < 5; ++k)
-        {
-            
-            Console.WriteLine($"is is {i}, j is {j}, k is {k}");
-        }
-    }
-}
-
-string GetFromDataBase(int i)
-{
-    return "some data";
-}
-
-Console.WriteLine("The loop is finished");
 Console.ReadKey();
