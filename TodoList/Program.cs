@@ -1,36 +1,38 @@
 ﻿using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-int[] numbers = new[] {10, -8, 2, 12, -17};
+//var userInput = Console.ReadLine();
 
-int nonPositiveCount;
+//bool isParsingSuccessful = int.TryParse(userInput, out int number);
 
-List<int> onlyPositive = GetOnlyPositive(numbers, out nonPositiveCount);
+//if (isParsingSuccessful)
+//{
+//    Console.WriteLine("Parsing worked, number is " + number);
+//}
+//else
+//{
+//    Console.WriteLine("Parsing was not successful");
+//}
 
-foreach (int number in onlyPositive)
+bool isParsingSuccessful;
+
+do
 {
-    Console.WriteLine(number);
-}
 
-Console.WriteLine("Count of non positive " + nonPositiveCount);
+    Console.WriteLine("Enter a number:");
+    var userInput = Console.ReadLine();
 
-List<int> GetOnlyPositive(int[] numbers, out int countOfNonPositive)
-{
-    List<int> result = new List<int>();
-    countOfNonPositive = 0;
+    isParsingSuccessful = int.TryParse(userInput, out int number);
 
-    foreach(int number in numbers)
+    if (isParsingSuccessful)
     {
-
-        if (number > 0) {
-            result.Add(number);
-        }
-        else
-        {
-            countOfNonPositive = countOfNonPositive + 1;
-        }
+        Console.WriteLine("Parsing worked, number is " + number);
     }
-    return result;
-}
+    else
+    {
+        Console.WriteLine("Parsing was not successful");
+    }
+
+} while (!isParsingSuccessful);
 
 Console.ReadKey();
