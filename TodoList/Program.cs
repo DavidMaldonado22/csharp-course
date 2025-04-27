@@ -1,38 +1,83 @@
 ﻿using System.Runtime.CompilerServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-//var userInput = Console.ReadLine();
+Console.WriteLine("Hello!");
 
-//bool isParsingSuccessful = int.TryParse(userInput, out int number);
+List<string> toDos = new List<string>();
 
-//if (isParsingSuccessful)
-//{
-//    Console.WriteLine("Parsing worked, number is " + number);
-//}
-//else
-//{
-//    Console.WriteLine("Parsing was not successful");
-//}
-
-bool isParsingSuccessful;
-
+string userChoice;
 do
 {
+    Console.WriteLine("What do you whant to do?");
 
-    Console.WriteLine("Enter a number:");
-    var userInput = Console.ReadLine();
+    Console.WriteLine("[S]ee all TODOs");
+    Console.WriteLine("[A]dd a TODO");
+    Console.WriteLine("[R]emove a TODO");
+    Console.WriteLine("[E]xit");
 
-    isParsingSuccessful = int.TryParse(userInput, out int number);
+    userChoice = Console.ReadLine();
+    userChoice.ToUpper();
 
-    if (isParsingSuccessful)
+
+    switch (userChoice)
     {
-        Console.WriteLine("Parsing worked, number is " + number);
+        case "S":
+            break;
+        case "A":
+            string toDo = validateToDo();
+            bool isTodoAlreadyExist = checkIfATodoExist(toDo);
+            AddAToDo(isTodoAlreadyExist, toDo);
+            break;
+        case "R":
+            break;
+        case "E":
+            break;
+        default:
+            Console.WriteLine("Invalid option, please, select a valid");
+            break;
+    }
+
+} while (userChoice != "E");
+
+string validateToDo()
+{
+    Console.WriteLine("Enter a TODO description: ");
+    string toDo = Console.ReadLine();
+
+    while (toDo.Length <= 0)
+    {
+        Console.WriteLine("Invalid description. The lengh of description can´t be 0. Please Enther a valid description.");
+        Console.WriteLine("Enter a TODO description again: ");
+        toDo = Console.ReadLine();
+    }
+    return toDo;
+}
+bool checkIfATodoExist(string toDoReceived)
+{
+    if (toDos.Count > 0)
+    {
+        foreach (string toDo in toDos)
+        {
+            if (toDo == toDoReceived)
+            {
+                Console.WriteLine("Already a TODO with same name exist!");
+                return true;
+            }
+           
+        }
+    }
+    return false;
+}
+void AddAToDo(bool isTodoAlreadyExist, string toDo)
+{
+    if(isTodoAlreadyExist)
+    {
+        Console.WriteLine("Nothing to be added");
     }
     else
     {
-        Console.WriteLine("Parsing was not successful");
+        toDos.Add(toDo);
     }
-
-} while (!isParsingSuccessful);
+}
 
 Console.ReadKey();
